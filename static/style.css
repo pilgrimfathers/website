@@ -1,20 +1,22 @@
 body {
   font: 1em sans-serif;
   background-color: black;
-  background-attachment: fixed;
-  background-image: url(static/background.mp4);
-  background-repeat: no-repeat;
-  background-position: center center;
 }
 
 #myVideo {
-  z-index: 0;
+  z-index: -1;
   position: fixed;
   right: 0;
   bottom: 0;
   min-width: 100%; 
   min-height: 100%;
   filter: blur(10);
+}
+
+@media only screen and (max-width: 900px) {
+  #myVideo {
+    left: 0;
+  }
 }
 
 .intro {
@@ -49,4 +51,9 @@ body {
 @keyframes blink-caret {
   from, to { border-color: transparent }
   50% { border-color: orange }
+}
+
+footer {
+  position: relative;
+  z-index: 1;
 }
