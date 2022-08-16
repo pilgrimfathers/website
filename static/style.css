@@ -1,46 +1,52 @@
 body {
-    font: 1em sans-serif;
-    background-color: black;
+  font: 1em sans-serif;
+  background-color: black;
+  background-attachment: fixed;
+  background-image: url(static/background.mp4);
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 #myVideo {
-    z-index: 0;
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%; 
-    min-height: 100%;
-    filter: blur(10);
+  z-index: 0;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  filter: blur(10);
 }
 
 .intro {
-    margin-top: 10rem;
+  margin-top: 10rem;
 }
 
-.wrapper {
-    /*This part is important for centering*/
-    display: grid;
-    place-items: center;
-  }
-  
-  .typing-demo {
-    width: 30ch;
-    animation: typing 5s steps(30), blink .5s step-end infinite alternate;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 3px solid;
-    font-family: monospace;
-    font-size: 2em;
-  }
-  
-  @keyframes typing {
-    from {
-      width: 0
-    }
-  }
-      
-  @keyframes blink {
-    50% {
-      border-color: transparent
-    }
-  }
+.typewriter {
+  width: max-content;
+}
+
+.typewriter p {
+  width:min-content;
+  color: #fff;
+  font-family: sans-serif;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 4s steps(50,end),
+    blink-caret .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}
