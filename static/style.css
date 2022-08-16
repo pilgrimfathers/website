@@ -24,12 +24,12 @@ body {
   }
   
   .typing-demo {
-    width: 27ch;
-    animation: typing 5s steps(24), blink .5s step-end infinite alternate;
+    width: 30ch;
+    animation: typing 5s steps(30), blink .5s step-end infinite alternate;
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid;
-
+    font-family: monospace;
     font-size: 2em;
   }
   
